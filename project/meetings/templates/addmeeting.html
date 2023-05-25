@@ -1,0 +1,19 @@
+
+
+{% include 'partials/_prot.html' %}
+
+<h1>Meeting Add</h1>
+
+{% if submitted %}
+        Your meeting is submitted succesfully!
+    
+{% else %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_p}} 
+    
+    <input type="submit" value="Submit" class="btn btn-secondary">
+</form>
+
+{% endif%}

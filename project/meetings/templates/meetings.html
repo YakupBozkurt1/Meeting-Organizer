@@ -1,0 +1,47 @@
+
+
+
+
+    {% include 'partials/_prot.html' %}
+
+    <h1>Meetings</h1>
+    
+
+  {% for meeting in meetings_list %}
+
+  <br>
+    <div class="card">
+      <div class="card-header">
+        {{ meeting.meeting_topic }}
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{ meeting.meeting_topic }}</h5>
+        <p class="card-text">
+          <ul>
+            <li><strong>Meeting Topic: </strong> {{ meeting.meeting_topic}}</li>
+            <li><strong>Meeting Date:</strong> {{ meeting.meeting_date}}</li>
+            <li><strong>Meeting Begining Time:</strong> {{ meeting.meeting_begin_time}}</li>
+            <li><strong>Meeting Ending Time:</strong> {{ meeting.meeting_ending_time}}</li>
+            <li><strong>Meeting Participants:</strong> {{ meeting.meeting_participants}}</li>
+          </ul>        
+        </p>
+      </div>
+      <div class="card-footer text-body-secondary">
+        <a href="{% url 'update-meeting' meeting.id %}" 
+        class="btn btn-outline-secondary btn-sm">Update Meeting</a>
+        
+        <a href="{% url 'delete-meeting' meeting.id %}" 
+        class="btn btn-outline-danger btn-sm">Delete Meeting</a>
+      </div>
+    </div>
+  <br/>
+  {% endfor %}
+   
+
+
+
+
+
+
+
+
